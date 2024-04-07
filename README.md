@@ -64,6 +64,10 @@ Beiträge sind herzlich willkommen! Bitte erstellen Sie einen Pull Request, um V
 
 - Verbesserte Statusmeldungen
 
+#### Behoben
+
+- Versteckte Dateien im Wurzelverzeichnis werden nicht als einzelnes DMG archivier
+
 ### Version 0.1 - 2024-04-07
 
 #### Hinzugefügt

@@ -12,9 +12,9 @@ def create_dmg(source):
     dmg_name = os.path.splitext(volume_name)[0] + '.dmg'
     dmg_path = os.path.join(directory_to_watch, dmg_name)
 
-    # Stellen Sie sicher, dass wir keine DMGs erzeugen
-    if source.endswith('.dmg'):
-        print("Ignoriere DMG-Datei:", source)
+    # Ignoriere versteckte Dateien und DMG-Dateien
+    if source.startswith('.') or source.endswith('.dmg'):
+        print("Ignoriere Datei:", source)
         return
 
     print(f"Erstelle DMG für: {source}")
@@ -32,8 +32,8 @@ def create_dmg(source):
 for item in os.listdir(directory_to_watch):
     full_path = os.path.join(directory_to_watch, item)
     
-    # Ignoriere, wenn es eine DMG-Datei ist
-    if full_path.endswith('.dmg'):
+    # Ignoriere, wenn es eine versteckte oder DMG-Datei ist
+    if item.startswith('.') or item.endswith('.dmg'):
         continue
     
     # Erstelle DMG für Dateien und Verzeichnisse
