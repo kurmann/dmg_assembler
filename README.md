@@ -58,6 +58,12 @@ Beiträge sind herzlich willkommen! Bitte erstellen Sie einen Pull Request, um V
 
 - keine
 
+### Version 0.2 - 2024-04-07
+
+#### Geändert
+
+- Verbesserte Statusmeldungen
+
 ### Version 0.1 - 2024-04-07
 
 #### Hinzugefügt
