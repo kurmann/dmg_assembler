@@ -50,7 +50,7 @@ Beiträge sind herzlich willkommen! Bitte erstellen Sie einen Pull Request, um V
 
 ## Lizenz
 
-`dmg-assembler` ist unter der MIT-Lizenz veröffentlicht. Weitere Informationen finden Sie in der [LIZENZ](LIZENZ)-Datei.
+`dmg-assembler` ist unter der MIT-Lizenz veröffentlicht. Weitere Informationen finden Sie in der [LICENSE](LICENSE)-Datei.
 
 ## Änderungsverlauf
 
