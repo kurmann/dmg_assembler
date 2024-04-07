@@ -14,10 +14,19 @@ def create_dmg(source):
 
     # Stellen Sie sicher, dass wir keine DMGs erzeugen
     if source.endswith('.dmg'):
+        print("Ignoriere DMG-Datei:", source)
         return
 
+    print(f"Erstelle DMG für: {source}")
+    
     command = f'hdiutil create -volname "{volume_name}" -srcfolder "{source}" -ov -format UDRW "{dmg_path}"'
-    subprocess.run(command, shell=True)
+    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = process.communicate()
+
+    if process.returncode == 0:
+        print(f"DMG erfolgreich erstellt: {dmg_name}")
+    else:
+        print(f"Fehler beim Erstellen von DMG für {source}: {stderr.decode()}")
 
 # Überprüfe jedes Element im Verzeichnis
 for item in os.listdir(directory_to_watch):
