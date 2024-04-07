@@ -3,10 +3,11 @@ import os
 import sys
 import subprocess
 
-# Das Verzeichnis aus den übergebenen Argumenten holen
+# Überprüft, ob eine Eingangsvariable gesetzt ist; Default ist "UDRW"
+image_format = "UDRW" if len(sys.argv) < 3 or sys.argv[2].lower() != "readonly" else "UDRO"
 directory_to_watch = sys.argv[1]
 
-# Funktion zum Erstellen des DMG
+# Funktion zum Erstellen des DMG mit APFS
 def create_dmg(source):
     volume_name = os.path.basename(source)
     dmg_name = os.path.splitext(volume_name)[0] + '.dmg'
@@ -17,16 +18,16 @@ def create_dmg(source):
         print("Ignoriere Datei:", source)
         return
 
-    print(f"Erstelle DMG für: {source}")
+    print(f"Erstelle {image_format} DMG für: {source}")
     
-    command = f'hdiutil create -volname "{volume_name}" -srcfolder "{source}" -ov -format UDRW "{dmg_path}"'
+    command = f'hdiutil create -volname "{volume_name}" -srcfolder "{source}" -ov -fs APFS -format {image_format} "{dmg_path}"'
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = process.communicate()
 
     if process.returncode == 0:
-        print(f"DMG erfolgreich erstellt: {dmg_name}")
+        print(f"{image_format} DMG erfolgreich erstellt: {dmg_name}")
     else:
-        print(f"Fehler beim Erstellen von DMG für {source}: {stderr.decode()}")
+        print(f"Fehler beim Erstellen von {image_format} DMG für {source}: {stderr.decode()}")
 
 # Überprüfe jedes Element im Verzeichnis
 for item in os.listdir(directory_to_watch):

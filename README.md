@@ -58,6 +58,16 @@ Beiträge sind herzlich willkommen! Bitte erstellen Sie einen Pull Request, um V
 
 - keine
 
+### Version 0.3 - 2024-04-07
+
+#### Hinzugefügt
+
+- Möglichkeit als Eingabeparamter festzulegen, ob ein Image beschreibbar ist oder nicht.
+
+#### Geändert
+
+- Verwendet Apple Filesystem als DMG-Dateisystem
+
 ### Version 0.2 - 2024-04-07
 
 #### Geändert
