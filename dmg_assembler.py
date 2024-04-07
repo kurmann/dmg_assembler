@@ -2,10 +2,16 @@
 import os
 import sys
 import subprocess
+import shutil
 
 # Überprüft, ob eine Eingangsvariable gesetzt ist; Default ist "UDRW"
 image_format = "UDRW" if len(sys.argv) < 3 or sys.argv[2].lower() != "readonly" else "UDRO"
 directory_to_watch = sys.argv[1]
+archived_directory = os.path.join(directory_to_watch, "Archived to DMG")
+
+# Stelle sicher, dass das Archiv-Verzeichnis existiert
+if not os.path.exists(archived_directory):
+    os.makedirs(archived_directory)
 
 # Funktion zum Erstellen des DMG mit APFS
 def create_dmg(source):
@@ -26,6 +32,9 @@ def create_dmg(source):
 
     if process.returncode == 0:
         print(f"{image_format} DMG erfolgreich erstellt: {dmg_name}")
+        # Verschiebe die Originaldatei/-verzeichnis ins Archiv
+        shutil.move(source, os.path.join(archived_directory, os.path.basename(source)))
+        print(f"Verschoben nach: {archived_directory}")
     else:
         print(f"Fehler beim Erstellen von {image_format} DMG für {source}: {stderr.decode()}")
 
@@ -34,7 +43,7 @@ for item in os.listdir(directory_to_watch):
     full_path = os.path.join(directory_to_watch, item)
     
     # Ignoriere, wenn es eine versteckte oder DMG-Datei ist
-    if item.startswith('.') or item.endswith('.dmg'):
+    if item.startswith('.') or item.endswith('.dmg') or item == "Archived to DMG":
         continue
     
     # Erstelle DMG für Dateien und Verzeichnisse

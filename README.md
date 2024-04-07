@@ -67,6 +67,7 @@ Beiträge sind herzlich willkommen! Bitte erstellen Sie einen Pull Request, um V
 #### Geändert
 
 - Verwendet Apple Filesystem als DMG-Dateisystem
+- Verschiebt erfogreich verarbeitete Dateien ins Unterverzeichnis "Archived to DMG"
 
 ### Version 0.2 - 2024-04-07
 
