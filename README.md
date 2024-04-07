@@ -54,12 +54,12 @@ Beiträge sind herzlich willkommen! Bitte erstellen Sie einen Pull Request, um V
 
 ## Änderungsverlauf
 
-## Unveröffentlicht
+### Unveröffentlicht
 
 - keine
 
-## Vesion 0.1 - 2024-04-07
+### Version 0.1 - 2024-04-07
 
-### Hinzugefügt
+#### Hinzugefügt
 
 - Erste Vesion
