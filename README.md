@@ -51,3 +51,15 @@ Beiträge sind herzlich willkommen! Bitte erstellen Sie einen Pull Request, um V
 ## Lizenz
 
 `dmg-assembler` ist unter der MIT-Lizenz veröffentlicht. Weitere Informationen finden Sie in der [LIZENZ](LIZENZ)-Datei.
+
+## Änderungsverlauf
+
+## Unveröffentlicht
+
+- keine
+
+## Vesion 0.1 - 2024-04-07
+
+### Hinzugefügt
+
+- Erste Vesion
