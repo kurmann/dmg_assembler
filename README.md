@@ -62,7 +62,8 @@ Beiträge sind herzlich willkommen! Bitte erstellen Sie einen Pull Request, um V
 
 #### Hinzugefügt
 
-- Möglichkeit als Eingabeparamter festzulegen, ob ein Image beschreibbar ist oder nicht.
+- Möglichkeit als Eingabeparameter festzulegen, ob ein Image beschreibbar ist oder nicht.
+- Möglichkeit das Zielverzeichnis anzugeben (Standard ist das Eingabeverzeichnis)
 
 #### Geändert
 
